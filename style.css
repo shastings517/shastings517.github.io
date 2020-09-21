@@ -1,0 +1,25 @@
+@keyframes FadeInOut {
+  0% {
+    opacity:1;
+  }
+  25% {
+    opacity:.75;
+  }
+  50% {
+    opacity:.50;
+  }
+  75% {
+    opacity:.25;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+img#top {
+  animation-name: FadeInOut;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-direction: alternate;
+}
