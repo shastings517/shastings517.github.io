@@ -40,8 +40,17 @@ function createRow(rowNum) {
 
 function handleClick(e) {
   console.log('CLICK', e.target)
-  e.target.classList.toggle('clicked')
+  const imgs = document.getElementsByClassName('bg');
+  for (let img of imgs) {
+    // console.log('link', link);
+    img.classList.toggle('clicked');
+  }
+  // container.classList.add('clicked');
+  // e.target.classList.add('clicked')
 }
+
+// div.addEventListener("click", handleClick);
+
 
 function createWindowEl(rowNum, colNum) {
   var div = document.createElement("div");
@@ -66,8 +75,10 @@ function createWindowEl(rowNum, colNum) {
 }
 
 const nav = document.getElementById('nav');
-nav.addEventListener('mouseenter', changeDefOver);
+nav.addEventListener('mouseover', changeDefOver);
+// nav.addEventListener('mouseenter', changeDefOver);
 nav.addEventListener('mouseout', changeDefOut);
+nav.addEventListener("click", handleClick);
 const links = document.getElementsByClassName('link');
 
 function changeDefOver(e) {
@@ -75,7 +86,7 @@ function changeDefOver(e) {
   // const links = document.getElementsByClassName('link');
   nav.classList.add('shake');
   for (let link of links) {
-    console.log('link', link);
+    // console.log('link', link);
     link.classList.toggle('opacity-toggle');
   }
   // links.forEach((l) => {

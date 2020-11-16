@@ -96,8 +96,8 @@ body {
     margin: 0;
 }
 
-.clicked {
-  transform: scaleX(5) scaleY(5) translate(-51px, 26px);
+/*.clicked {*/
+  /*transform: scaleX(5) scaleY(5) translate(-51px, 26px);*/
   /*position: fixed;
   top: 0;
   right: 0;
@@ -105,7 +105,7 @@ body {
   left: 0;
   width: 100% !important;
   height: 100% !important;*/
-}
+/*}*/
 
 .baseDiv {
   display: inline-block;
@@ -125,6 +125,7 @@ body {
   transition: opacity 2s ease-in-out;
   cursor: pointer;
   font-weight: bold;
+  font-family: Dosis-800;
   /*transition: all 2s ease-out;*/
 }
 
@@ -160,7 +161,7 @@ body {
   height: 80px;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 387px;
   /*animation-name: shake;
   animation-timing-function: cubic-bezier(.36,.07,.19,.97);
   animation-iteration-count: infinite;
@@ -169,6 +170,10 @@ body {
   /*transform: translate3d(0, 0, 0);*/
   /*backface-visibility: hidden;*/
   /*perspective: 1000px;*/
+}
+
+.clicked {
+  animation: spin 1.5s ease-in-out;
 }
 
 /*#links div {
