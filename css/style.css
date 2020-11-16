@@ -90,12 +90,229 @@
        url('../fonts/dosis-v18-latin-800.svg#Dosis') format('svg'); /* Legacy iOS */
 }
 
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.clicked {
+  transform: scaleX(5) scaleY(5) translate(-51px, 26px);
+  /*position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;*/
+}
+
+.baseDiv {
+  display: inline-block;
+  height: 100%;
+  /*background-color: '';*/
+  color: white;
+  transition: all 1s ease-out;
+}
+
+/*#blog {
+  transform: rotate(-30deg);
+}*/
+
+.link {
+  margin: 7px;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  cursor: pointer;
+  font-weight: bold;
+  /*transition: all 2s ease-out;*/
+}
+
+.link:hover {
+  text-decoration: underline;
+  text-decoration-color: pink;
+  text-decoration-style: wavy;
+}
+
+#projects {
+  transform: rotate(-15deg);
+  transition-delay: 0.0s;
+}
+
+#resume {
+  transform: rotate(0deg);
+  transition-delay: 0.2s;
+}
+
+#contact {
+  transform: rotate(15deg);
+  transition-delay: 0.4s;
+}
+
+#links {
+  position: relative;
+  left: 85px;
+  bottom: 13px;
+}
+
+#nav {
+  /*position: relative;*/
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /*animation-name: shake;
+  animation-timing-function: cubic-bezier(.36,.07,.19,.97);
+  animation-iteration-count: infinite;
+  animation-duration: 0.82s;*/
+  /*animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;*/
+  /*transform: translate3d(0, 0, 0);*/
+  /*backface-visibility: hidden;*/
+  /*perspective: 1000px;*/
+}
+
+/*#links div {
+  transition: opacity 1s;
+}*/
+
+.opacity-toggle {
+  opacity: 1;
+  /*animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;*/
+}
+
+/*.fadeIn {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both, FadeIn 1.5s ease-out;
+}*/
+
+#nav.shake {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  /*animation-name: FadeInOut;*/
+    /*animation-timing-function: linear;*/
+    /*animation-iteration-count: infinite;*/
+    /*animation-duration: 1.5s;*/
+    /*animation-direction: alternate;*/
+  /*animation-name: shake;
+  animation-timing-function: cubic-bezier(.36,.07,.19,.97);
+  animation-iteration-count: infinite;
+  animation-duration: 0.82s;*/
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+#l4 {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  animation: spin 1.5s infinite ease-in-out;
+   /*animation: shake .82s, spin 1.5s;*/
+  /*animation-timing-function: cubic-bezier(.36,.07,.19,.97);
+  animation-iteration-count: infinite;
+  animation-duration: 0.82s;*/
+}
+
+#l3 {
+  position: absolute;
+  z-index: 2;
+  margin: .8em;
+  height: 70%;
+  transform: translate(22%, 22%);
+  -webkit-animation: spinReverse 2.25s infinite ease-in-out;
+}
+
+#l2 {
+  position: absolute;
+  z-index: 3;
+  margin: 1.35em;
+  height: 50%;
+  transform: translate(50%, 50%);
+  -webkit-animation: spin 2.15s infinite ease-in-out;
+}
+
+#l1 {
+  position: absolute;
+  z-index: 4;
+  margin: 1.875em;
+  height: 30%;
+  transform: translate(118%, 118%);
+  -webkit-animation: spinReverse 3s infinite ease-in-out;
+}
+
+/*.shake {
+  animation-name: shake;
+  animation-timing-function: cubic-bezier(.36,.07,.19,.97);
+  animation-iteration-count: infinite;
+  animation-duration: 0.82s;
+}*/
+
+.logo-img {
+  animation-name: shake;
+  animation-timing-function: cubic-bezier(.36,.07,.19,.97);
+  /*animation-iteration-count: infinite;*/
+  /*animation-duration: 0.82s;*/
+  animation-play-state: paused;
+}
+
+.logo-img:hover {
+  animation-play-state: running;
+}
+/*.logo-img {
+  position: absolute;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+*/
 .bg {
-    display: block;
-    width: 100%;
-    height: auto;
+    /* display: block; */
+    height: 100vh;
+    /* height: auto; */
     position: absolute;
-    bottom: 0;
+    /* bottom: 0; */
+}
+
+@-webkit-keyframes spin {
+    0%  {
+      /*-webkit-transform: rotate(0deg) translate3d(-.5px, 0, 0);*/
+      -webkit-transform: rotate(0deg);
+    }
+    /*25% {
+      -webkit-transform: rotate(90deg) translate3d(-.1px, 0, 0);
+    }
+    50% {
+      -webkit-transform: rotate(180deg) translate3d(-.2px, 0, 0);
+    }
+    75% {
+      -webkit-transform: rotate(270deg) translate3d(.2px, 0, 0);
+    }*/
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spinReverse {
+  0%  {
+      /*-webkit-transform: rotate(360deg) translate3d(-.5px, 0, 0);*/
+      -webkit-transform: rotate(360deg);
+    }
+    /*25% {
+      -webkit-transform: rotate(270deg) translate3d(.4px, 0, 0);
+    }
+    50% {
+      -webkit-transform: rotate(180deg) translate3d(-.3px, 0, 0);
+    }
+    75% {
+      -webkit-transform: rotate(90deg) translate3d(.4px, 0, 0);
+    }*/
+    100% {
+      -webkit-transform: rotate(0deg);
+    }
 }
 
 .h2 {
@@ -126,21 +343,36 @@
     font-family: Dosis-800;
 }
 
+#box-1 {
+    background-color: red;   
+}
+
+#box-2 {
+    background-color: blue;   
+}
+
+#box-3 {
+    background-color: green;   
+}
+
+#box-4 {
+    background-color: lightblue;   
+}
 
 .bg-img-container {
     overflow: hidden;
-    /* height: 100px; */
+    /*height: 300px;*/
     /* max-height: 300px; */
-    /* position: relative; */
+    /*position: relative;*/
 }
 
-.img {
+/*.img {
     display: block;
     width: 1280px;
     height: auto;
     position: absolute;
     bottom: 0;
-}
+}*/
 
 @keyframes FadeInOut {
     0% {
@@ -159,6 +391,41 @@
         opacity:0;
     }
 }
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/*@keyframes shake {
+    0% {
+        left: .1px;
+    }
+    50% {
+        left: -.1px;
+    }
+    100% {
+        left: 0;
+    }
+   /* 75% {
+        opacity:.25;
+    }
+    100% {
+        opacity:0;
+    }*/
+/*}*/
 
 img#top {
     animation-name: FadeInOut;
