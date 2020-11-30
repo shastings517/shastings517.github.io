@@ -40,11 +40,27 @@ function createRow(rowNum) {
 
 function handleClick(e) {
   console.log('CLICK', e.target)
-  const imgs = document.getElementsByClassName('bg');
-  for (let img of imgs) {
+  // const imgs = document.getElementsByClassName('bg');
+  const topBg = document.getElementById('top');
+  const circle1 = document.getElementById('circle1');
+  const circle2 = document.getElementById('circle2');
+  const circle3 = document.getElementById('circle3');
+  const circle4 = document.getElementById('circle4');
+  topBg.classList.add('fadeInOut');
+  circle4.classList.add('spin4');
+  circle3.classList.add('spin3');
+  circle2.classList.add('spin2');
+  circle1.classList.add('spin1');
+
+  const links = document.getElementsByClassName('link');
+  // nav.classList.add('shake');
+  for (let link of links) {
     // console.log('link', link);
-    img.classList.toggle('clicked');
+    link.classList.add('opacity-toggle');
   }
+  // for (let img of imgs) {
+  //   img.classList.toggle('clicked');
+  // }
   // container.classList.add('clicked');
   // e.target.classList.add('clicked')
 }
@@ -74,10 +90,10 @@ function createWindowEl(rowNum, colNum) {
   document.getElementById(`row-${rowNum}`).appendChild(div);
 }
 
-const nav = document.getElementById('nav');
-nav.addEventListener('mouseover', changeDefOver);
+const nav = document.getElementById('nav-menu');
+// nav.addEventListener('mouseover', changeDefOver);
 // nav.addEventListener('mouseenter', changeDefOver);
-nav.addEventListener('mouseout', changeDefOut);
+// nav.addEventListener('mouseout', changeDefOut);
 nav.addEventListener("click", handleClick);
 const links = document.getElementsByClassName('link');
 
